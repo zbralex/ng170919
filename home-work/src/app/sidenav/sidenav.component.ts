@@ -1,4 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component,
+  ContentChild,
+  EventEmitter,
+  OnInit,
+  Output,
+  TemplateRef,
+  ViewChild,
+  ViewContainerRef} from '@angular/core';
+import {MatSidenav} from '@angular/material';
 
 @Component({
   selector: 'app-sidenav',
@@ -6,6 +14,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
+  @ViewChild('drawer', {static: true})
+  public drawer: MatSidenav;
+
+  @Output()
+  public setSideNavControl: EventEmitter<MatSidenav> = new EventEmitter();
   menu: any = [
     {
       name: 'About',
@@ -22,7 +35,10 @@ export class SidenavComponent implements OnInit {
   ];
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit(): void {
+    this.setSideNavControl.emit(this.drawer);
   }
-
+  toggleMenu() {
+    this.drawer.toggle();
+  }
 }
