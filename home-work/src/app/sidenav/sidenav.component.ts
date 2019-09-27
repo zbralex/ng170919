@@ -1,11 +1,14 @@
-import {Component,
+import {
+  Component,
   ContentChild,
+  ElementRef,
   EventEmitter,
   OnInit,
   Output,
   TemplateRef,
   ViewChild,
-  ViewContainerRef} from '@angular/core';
+  ViewContainerRef
+} from '@angular/core';
 import {MatSidenav} from '@angular/material';
 
 @Component({
@@ -14,11 +17,18 @@ import {MatSidenav} from '@angular/material';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
-  @ViewChild('drawer', {static: true})
-  public drawer: MatSidenav;
-
   @Output()
   public setSideNavControl: EventEmitter<MatSidenav> = new EventEmitter();
+
+  @ViewChild('drawer', {static: true})
+  public drawer: MatSidenav;
+  // content
+  @ContentChild('content', {static: true})
+  public content: TemplateRef<any>;
+  // container
+  @ViewChild('container', {static: true, read: ViewContainerRef})
+  public container: ViewContainerRef;
+
   menu: any = [
     {
       name: 'About',
@@ -36,7 +46,10 @@ export class SidenavComponent implements OnInit {
   constructor() { }
 
   public ngOnInit(): void {
-    this.setSideNavControl.emit(this.drawer);
+    this.container.createEmbeddedView(this.content);
+    console.log('*content:', this.content); // элемент шаблона должен находиться в рутовом компоненте app.component.html
+    console.log('*container:', this.container);
+    // this.container.createEmbeddedView(this.content);
   }
   toggleMenu() {
     this.drawer.toggle();
