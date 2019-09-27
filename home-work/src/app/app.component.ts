@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Iplaces, places} from "./mock";
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = {
     text: 'Home Work',
-    subtitle: 'some text for subtitle'
+    subtitle: 'some text for subtitle',
+    task: 'Places mock'
   };
+  public places: Iplaces[] = places;
 }

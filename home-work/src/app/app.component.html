@@ -1,6 +1,27 @@
 <app-header [title]="title"></app-header>
 <app-sidenav>
   <ng-template #content>
-    <h1>content Angular</h1>
+    <h1 [ngStyle]="{'color': 'violet'}">{{title.task}}</h1>
+
+
+
+<mat-grid-list cols="2" rowHeight="2:2" [ngStyle]="{'max-width': '1200px', 'margin': '0 auto'}" >
+  <mat-grid-tile *ngFor="let item of places" [ngStyle]="{'max-width': '500px'}">
+        <mat-card class="example-card" >
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{item.address}}</mat-card-title>
+            <mat-card-subtitle>{{item.phone}}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image [src]="item.img" [alt]="item.img">
+          <mat-card-content>
+            <p>
+              {{item.address}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+  </mat-grid-tile>
+
+</mat-grid-list>
   </ng-template>
 </app-sidenav>
