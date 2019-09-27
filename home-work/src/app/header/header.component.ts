@@ -7,7 +7,7 @@ import {MatSidenav} from '@angular/material';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Input() public title = 'title';
+  @Input() public title = 'Header';
   @Input() public drawer: MatSidenav;
   constructor() { }
 

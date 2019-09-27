@@ -7,10 +7,6 @@ import {Iplaces, places} from "./mock";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = {
-    text: 'Home Work',
-    subtitle: 'some text for subtitle',
-    task: 'Places mock'
-  };
+  title = 'Home Work';
   public places: Iplaces[] = places;
 }
