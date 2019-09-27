@@ -1,2 +1,5 @@
-<mat-toolbar color="primary">My App</mat-toolbar>
+<mat-toolbar color="primary">
+  <h1>{{title.text}}</h1>
+  <span [ngStyle]="{'display': 'block', 'font-size': '12px'}">{{title.subtitle}}</span>
+</mat-toolbar>
 
