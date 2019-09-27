@@ -6,7 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
-
+  menu: any = [
+    {
+      name: 'About',
+      url: 'about'
+    },
+    {
+      name: 'Home',
+      url: 'home'
+    },
+    {
+      name: 'Contacts',
+      url: 'contacts'
+    }
+  ];
   constructor() { }
 
   ngOnInit() {
