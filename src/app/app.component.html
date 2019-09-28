@@ -23,7 +23,7 @@
             <mat-card-title [ngStyle]="{'color': 'white'}">{{item.weather.title | uppercase}}</mat-card-title>
 
           </mat-card-header>
-          <img mat-card-image src="../assets/images/w-line.png">
+          <img mat-card-image src="./assets/images/w-line.png">
 
           <mat-card-content>
 
@@ -36,6 +36,22 @@
             <p>
               Water: {{item.weather.water}}<sup class="degree">°</sup>
             </p>
+          </mat-card-content>
+        </mat-card>
+              <!-- social_info -->
+        <mat-card class="example-card" [ngStyle]="{'background':'#fd7b87'}">
+          <mat-card-header>
+            <mat-card-title [ngStyle]="{'color': 'white'}">{{item.social_info.title | uppercase}}</mat-card-title>
+
+          </mat-card-header>
+
+          <mat-card-content>
+              <img [ngStyle]="{'width': '60px','height': '60px', 'border-radius':'50%', 'object-fit': 'cover', 'margin': '0 auto'}" mat-card-image [src]="item.social_info.img" [alt]="item.img">
+
+            <div>Followers: {{item.social_info.followers}}</div>
+            <img mat-card-image src="./assets/images/line.png">
+            <div> Following: {{item.social_info.following}}</div>
+
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
