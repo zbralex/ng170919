@@ -19,15 +19,20 @@ import {MatSidenav} from '@angular/material';
 export class SidenavComponent implements OnInit {
   @Output()
   public setSideNavControl: EventEmitter<MatSidenav> = new EventEmitter();
+// content
+  @ContentChild('content', {static: true})
+  public content: TemplateRef<any>;
+  @ContentChild('contentWeather', {static: true})
+  public contentWeather: TemplateRef<any>;
+  // container
+  @ViewChild('containerPLace', {static: true, read: ViewContainerRef})
+  public containerPLace: ViewContainerRef;
+  @ViewChild('containerWeather', {static: true, read: ViewContainerRef})
+  public containerWeather: ViewContainerRef;
 
   @ViewChild('drawer', {static: true})
   public drawer: MatSidenav;
-  // content
-  @ContentChild('content', {static: true})
-  public content: TemplateRef<any>;
-  // container
-  @ViewChild('container', {static: true, read: ViewContainerRef})
-  public container: ViewContainerRef;
+
 
   menu: any = [
     {
@@ -46,9 +51,8 @@ export class SidenavComponent implements OnInit {
   constructor() { }
 
   public ngOnInit(): void {
-    this.container.createEmbeddedView(this.content);
-    console.log('*content:', this.content); // элемент шаблона должен находиться в рутовом компоненте app.component.html
-    console.log('*container:', this.container);
+    this.containerPLace.createEmbeddedView(this.content);
+    this.containerWeather.createEmbeddedView(this.contentWeather);
     // this.container.createEmbeddedView(this.content);
   }
   toggleMenu() {

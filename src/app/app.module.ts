@@ -6,12 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import {SharedModule} from './shared/shared.module';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { PlacesComponent } from './places/places.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SidenavComponent
+    SidenavComponent,
+    PlacesComponent
   ],
   imports: [
     BrowserModule,

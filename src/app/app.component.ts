@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Iplaces, places} from "./mock";
+import {Iplaces, places} from './mock';
 
 @Component({
   selector: 'app-root',

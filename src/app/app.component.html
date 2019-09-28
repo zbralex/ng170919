@@ -2,11 +2,8 @@
 <app-sidenav>
   <ng-template #content>
     <h1 [ngStyle]="{'color': 'violet'}">{{title}}</h1>
-
-
-
-<mat-grid-list cols="2" rowHeight="2:2" [ngStyle]="{'max-width': '1200px', 'margin': '0 auto'}" >
-  <mat-grid-tile *ngFor="let item of places" [ngStyle]="{'max-width': '500px'}">
+    <mat-grid-list cols="2" rowHeight="1:1" [ngStyle]="{'max-width': '1200px', 'margin': '0 auto'}" >
+      <mat-grid-tile *ngFor="let item of places" [ngStyle]="{'max-width': '500px'}">
         <mat-card class="example-card" >
           <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
@@ -20,8 +17,34 @@
             </p>
           </mat-card-content>
         </mat-card>
-  </mat-grid-tile>
+        <mat-card class="example-card" [ngStyle]="{'background':'#5fb3f9'}">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title [ngStyle]="{'color': 'white'}">{{item.weather.title | uppercase}}</mat-card-title>
 
-</mat-grid-list>
+          </mat-card-header>
+          <img mat-card-image src="../assets/images/w-line.png">
+
+          <mat-card-content>
+
+              <figure  [ngStyle]="{'display':'flex','flex-flow':'row nowrap','justify-content':'space-around', 'margin':'5px'}">
+                <img [ngStyle]="{'width': '50%'}" mat-card-image [src]="item.weather.icon" [alt]="item.img">
+                <figcaption [ngStyle]="{'color': 'white'}">
+                  <h3>{{item.weather.water}}<sup class="degree">°</sup></h3></figcaption>
+              </figure>
+
+            <p>
+              Water: {{item.weather.water}}<sup class="degree">°</sup>
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+
+
+    </mat-grid-list>
   </ng-template>
+
 </app-sidenav>
+<app-places>
+
+</app-places>
