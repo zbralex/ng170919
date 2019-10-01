@@ -1,4 +1,41 @@
-<section>
 
-</section>
-
+<mat-tab-group >
+    <mat-tab *ngFor="let item of placesTypes" [label]="item.type">
+    <ng-template matTabContent>
+      <div class="place__wrap">
+        <div class="places">
+          <img [src]="item.img" [ngStyle]="{'object-fit': 'cover'}">
+          <h2>{{item.address}}</h2>
+          <p>Tel:{{item.phone}}</p>
+        </div>
+        
+  
+      <div class="right-column right-column--weather" [ngStyle]="{'background-color': 'blueviolet', 'width': '300px', 'padding': '15px'}">
+        <h1 [ngStyle]="{'text-align': 'center', 'color': '#fff'}">{{item.weather.title |  uppercase }}</h1>
+        <div class="right-column__temperature--first">
+          <img [src]="item.weather.icon" [ngStyle]="{'width': '150px'}">
+          <h3 [ngStyle]="{'color': 'white'}">{{item.weather.temperature}} <sup>°</sup></h3>
+        </div>
+       
+      </div>
+      <div class="right-column right-column--social" [ngStyle]="{'background-color': '#fd7b87', 'width': '300px', 'padding': '15px'}">
+          <h1 [ngStyle]="{'text-align': 'center', 'color': '#fff'}">{{item.social_info.title |  uppercase }}</h1>
+          <div class="right-column__temperature--second">
+            <img [src]="item.social_info.img" [ngStyle]="{'width': '150px','height': '150px', 'border-radius': '50%', 'object-fit': 'cover'}">
+  
+              <div class="right-column__subscribe">
+                <span [ngStyle]="{'color': 'white'}">Following: {{item.social_info.following}}</span>
+                <span [ngStyle]="{'color': 'white'}">Followers: {{item.social_info.followers}}</span>
+              </div>
+          
+          </div>
+         
+        </div>
+      </div>
+      
+      
+    </ng-template>
+  </mat-tab>
+  </mat-tab-group>
+  
+  

@@ -1,23 +1,27 @@
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
-export interface Iplaces {
-  img:string,
-  address:string,
-  phone:  number // дополнительно задание pipe для форматирования
-  weather: {
-    title: string,
-    icon: string,
-    water: number,
-    temperature: number
-  },
-  social_info:{
-    title: string,
-    img: string,
-    followers: number,
-    following: number
-  },
-  type: string
+
+export interface Iweather {
+  title: string;
+  icon: string;
+  water: number;
+  temperature: number;
 }
+export interface Isocial {
+  title: string;
+  img: string;
+  followers: number;
+  following: number;
+}
+export interface Iplaces {
+  img: string;
+  address: string;
+  phone: number; // дополнительно задание pipe для форматирования
+  weather: Iweather;
+  social_info: Isocial;
+  type: string;
+}
+
 export const places: Iplaces[] = [
   {
     img: 'assets/images/2/n1.jpeg',

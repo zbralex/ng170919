@@ -1,15 +1,13 @@
+import { places } from './../mock/index';
 import {
   Component,
-  ContentChild,
-  ElementRef,
   EventEmitter,
   OnInit,
   Output,
-  TemplateRef,
   ViewChild,
-  ViewContainerRef
 } from '@angular/core';
 import {MatSidenav} from '@angular/material';
+import { Iplaces, Iweather } from '../mock';
 
 @Component({
   selector: 'app-sidenav',
@@ -17,22 +15,10 @@ import {MatSidenav} from '@angular/material';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
-  @Output()
-  public setSideNavControl: EventEmitter<MatSidenav> = new EventEmitter();
-// content
-  @ContentChild('content', {static: true})
-  public content: TemplateRef<any>;
-  @ContentChild('contentWeather', {static: true})
-  public contentWeather: TemplateRef<any>;
-  // container
-  @ViewChild('containerPLace', {static: true, read: ViewContainerRef})
-  public containerPLace: ViewContainerRef;
-  @ViewChild('containerWeather', {static: true, read: ViewContainerRef})
-  public containerWeather: ViewContainerRef;
+  @Output() public setSideNavControl: EventEmitter<MatSidenav> = new EventEmitter();
 
   @ViewChild('drawer', {static: true})
   public drawer: MatSidenav;
-
 
   menu: any = [
     {
@@ -51,9 +37,7 @@ export class SidenavComponent implements OnInit {
   constructor() { }
 
   public ngOnInit(): void {
-    this.containerPLace.createEmbeddedView(this.content);
-    this.containerWeather.createEmbeddedView(this.contentWeather);
-    // this.container.createEmbeddedView(this.content);
+    this.setSideNavControl.emit(this.drawer);
   }
   toggleMenu() {
     this.drawer.toggle();

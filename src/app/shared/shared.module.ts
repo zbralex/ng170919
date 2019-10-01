@@ -6,7 +6,8 @@ import {MatToolbarModule,
   MatIconModule,
   MatCardModule,
   MatGridListModule,
-  MatProgressSpinnerModule} from '@angular/material';
+  MatProgressSpinnerModule,
+  MatTabsModule} from '@angular/material';
 
 
 
@@ -20,7 +21,8 @@ import {MatToolbarModule,
     MatIconModule,
     MatCardModule,
     MatGridListModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatTabsModule
   ]
 })
 export class SharedModule { }
