@@ -7,13 +7,15 @@ import { HeaderComponent } from './header/header.component';
 import {SharedModule} from './shared/shared.module';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { PlacesComponent } from './places/places.component';
+import { CityFilterPipe } from './city-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SidenavComponent,
-    PlacesComponent
+    PlacesComponent,
+    CityFilterPipe
   ],
   imports: [
     BrowserModule,

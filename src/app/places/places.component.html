@@ -1,6 +1,9 @@
+<mat-form-field>
+  <input matInput type="text" (input)="searchInput($event)" placeholder="search">
+</mat-form-field>
 
 <mat-tab-group >
-    <mat-tab *ngFor="let item of placesTypes" [label]="item.type">
+    <mat-tab *ngFor="let item of places | cityFilter:searchTerm" [label]="item.type">
     <ng-template matTabContent>
       <div class="place__wrap">
         <div class="places">

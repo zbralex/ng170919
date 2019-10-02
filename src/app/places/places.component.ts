@@ -6,13 +6,12 @@ import {Iplaces, places} from "../mock";
   templateUrl: './places.component.html',
   styleUrls: ['./places.component.css']
 })
-export class PlacesComponent implements OnInit {
+export class PlacesComponent {
+  searchTerm: string;
+  public places: Iplaces[] = places;
 
-  public placesTypes: Iplaces[] = places;
-  constructor() { }
-
-  public ngOnInit(): void {
-
+  public searchInput({target}: KeyboardEvent): void {
+    this.searchTerm = (target as HTMLInputElement).value;
+    console.log(this.searchTerm);
   }
-
 }

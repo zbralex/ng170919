@@ -7,7 +7,9 @@ import {MatToolbarModule,
   MatCardModule,
   MatGridListModule,
   MatProgressSpinnerModule,
-  MatTabsModule} from '@angular/material';
+  MatTabsModule,
+  MatFormFieldModule,
+  MatInputModule} from '@angular/material';
 
 
 
@@ -22,7 +24,9 @@ import {MatToolbarModule,
     MatCardModule,
     MatGridListModule,
     MatProgressSpinnerModule,
-    MatTabsModule
+    MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule
   ]
 })
 export class SharedModule { }
