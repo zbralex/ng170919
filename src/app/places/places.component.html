@@ -1,20 +1,22 @@
 <mat-form-field>
   <input matInput type="text" (input)="searchInput($event)" placeholder="search">
 </mat-form-field>
-
+<mat-checkbox (change)="toggleOnlyCalifornia($event)">
+California
+</mat-checkbox>
 <mat-tab-group >
-    <mat-tab *ngFor="let item of places | cityFilter:searchTerm" [label]="item.type">
+    <mat-tab *ngFor="let item of places | cityFilter:searchTerm:onlyCalifornia" [label]="item.type">
     <ng-template matTabContent>
       <div class="place__wrap">
         <div class="places">
           <img [src]="item.img" [ngStyle]="{'object-fit': 'cover'}">
-          <h2>{{item.address}}</h2>
+          <h4>{{item.address}}</h4>
           <p>Tel:{{item.phone}}</p>
         </div>
         
   
       <div class="right-column right-column--weather" [ngStyle]="{'background-color': 'blueviolet', 'width': '300px', 'padding': '15px'}">
-        <h1 [ngStyle]="{'text-align': 'center', 'color': '#fff'}">{{item.weather.title |  uppercase }}</h1>
+        <h1 [ngStyle]="{'text-align': 'center', 'color': '#fff'}">{{item.weather.title |  uppercase }} </h1>
         <div class="right-column__temperature--first">
           <img [src]="item.weather.icon" [ngStyle]="{'width': '150px'}">
           <h3 [ngStyle]="{'color': 'white'}">{{item.weather.temperature}} <sup>°</sup></h3>

@@ -9,7 +9,8 @@ import {MatToolbarModule,
   MatProgressSpinnerModule,
   MatTabsModule,
   MatFormFieldModule,
-  MatInputModule} from '@angular/material';
+  MatInputModule,
+  MatCheckboxModule} from '@angular/material';
 
 
 
@@ -26,7 +27,8 @@ import {MatToolbarModule,
     MatProgressSpinnerModule,
     MatTabsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCheckboxModule
   ]
 })
 export class SharedModule { }

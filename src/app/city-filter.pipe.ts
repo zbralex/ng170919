@@ -6,12 +6,16 @@ import { Iplaces } from './mock';
 })
 export class CityFilterPipe implements PipeTransform {
 
- public transform(places: Iplaces[], searchTerm: string): Iplaces[] {
+ public transform(places: Iplaces[], searchTerm: string, onlyCalifornia: boolean): Iplaces[] {
+   let result: Iplaces[] = places;
+   if(onlyCalifornia) {
+    result = result.filter((place: Iplaces) => place.type === 'California' ? onlyCalifornia : false)
+   }
     if (!searchTerm) {
-      return places;
+      return result;
     }
-    return places.filter((place: Iplaces) => {
-      return `${place.address}`.toLowerCase().includes(searchTerm.toLowerCase());
+    return result.filter((place: Iplaces) => {
+      return `${place.type}`.toLowerCase().includes(searchTerm.toLowerCase());
     });
   }
 
