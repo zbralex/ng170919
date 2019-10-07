@@ -1,2 +1,3 @@
-<app-header [drawer]="drawer"></app-header>
-<app-sidenav (setSideNavControl)="setSideNav($event)"></app-sidenav>
+<app-places  [places]="places" (changePlace)="onChangePlace($event)"></app-places>
+<app-weather [weather]="selectedPlace.weather"></app-weather>
+<app-social></app-social>

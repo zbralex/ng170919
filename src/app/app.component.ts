@@ -1,6 +1,7 @@
-import { Component, Output } from '@angular/core';
-import {Iplaces, Iweather, Isocial, places} from './mock';
-import {MatSidenav} from '@angular/material';
+import { Component } from '@angular/core';
+import {Iplaces, places} from './mock';
+import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +9,20 @@ import {MatSidenav} from '@angular/material';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  public selectedPlace!: Iplaces;
+  public places: Iplaces[] = [];
+  private _places$: Observable<Iplaces[]> = of(places)
+    .pipe(
+      delay(3000)
+    );
 
-  @Output() weather: Iweather;
-  @Output() social: Isocial;
-  public places: Iplaces[] = places;
-
-  public drawer: MatSidenav;
-  public setSideNav(drawer: MatSidenav): void {
-    Promise.resolve().then(() => this.drawer = drawer);
+  public constructor() {
+    this._places$.subscribe((data: Iplaces[]) => {
+      this.places = data;
+    });
   }
 
+  public onChangePlace(place: Iplaces) {
+    this.selectedPlace = place;
+  }
 }
