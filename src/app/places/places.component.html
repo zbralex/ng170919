@@ -1,13 +1,13 @@
 <ng-container>
   <img
     class="card-img-top"
-    [src]="selectedPlace.img"
+    [src]="selectedPlace?.img"
   >
   <div >
     <a *ngFor="let place of places"    (click)="onPlaceClick($event, place)"  href="#"  >
-      {{ place.address }}
+      {{ place?.address }}
       <br>
-      {{ place.phone}}
+      {{ place?.phone}}
     </a>
   </div>
 </ng-container>
