@@ -1,3 +1,4 @@
-<div class="col">
-    <p class="h1">{{ weather?.temperature }}°</p>
-  </div>
+<div class="weather">
+  <h1 class="weather-title">{{ weather?.temperature }}°</h1>
+  <img [src]="weather?.icon" [alt]="weather?.title" [ngStyle]="{'width': '150px'}">
+</div>

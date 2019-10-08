@@ -1,0 +1,26 @@
+
+.places {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.places-right__wrap {
+    flex-flow: column nowrap;
+    width: 50%;
+    margin: 15px;
+}
+.places-right {
+   min-height: 350px;
+   border-radius: 15px;
+   padding: 15px;
+   margin: 15px;
+}
+.places-right--top {
+    background-color:cornflowerblue ;
+}
+.places-right--bottom {
+    background-color:coral;
+}

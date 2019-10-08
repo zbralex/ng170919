@@ -1,3 +1,17 @@
-<app-places  [places]="places" (changePlace)="onChangePlace($event)"></app-places>
-<app-weather [weather]="selectedPlace?.weather"></app-weather>
-<app-social></app-social>
+<div class="places">
+    <div class="places-left">
+        <app-places  [places]="places" (changePlace)="onChangePlace($event)"></app-places>
+    </div>
+    
+
+<div class="places-right__wrap">
+    <div class="places-right places-right--top">
+        <app-weather [weather]="selectedPlace?.weather"></app-weather>
+    </div>
+
+    <div class="places-right places-right--bottom">
+            <app-social [social]="selectedPlace?.social_info"></app-social>
+    </div>
+</div>
+
+</div>

@@ -1,34 +1,6 @@
 
-.right-column__temperature--first {
+.places-inner {
     display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-around;
-}
-.place__wrap {
-    width: 1200px;
-    display: grid;
-    margin: 0 auto;
-}
-.places {
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-.right-column--weather {
-    grid-row: 1;
-    grid-column: 2;
-}
-.right-column--social {
-    grid-row: 2;
-    grid-column: 2;
-}
-.right-column__subscribe {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-}
-.places {
-    display: flex;
-    flex-direction: column;
-    background-color: #fda660;
+    flex-flow: column nowrap;
+    color: black;
 }

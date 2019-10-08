@@ -9,11 +9,11 @@ import { delay } from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public selectedPlace!: Iplaces;
+  public selectedPlace: Iplaces;
   public places: Iplaces[] = [];
   private _places$: Observable<Iplaces[]> = of(places)
     .pipe(
-      delay(3000)
+      delay(1000)
     );
 
   public constructor() {

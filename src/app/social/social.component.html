@@ -1,1 +1,9 @@
-<p>social works!</p>
+<h2>{{social?.title}}</h2>
+<img [src]="social?.img" [alt]="social?.title" [ngStyle]="{'width': '150px', 'height': '150px', 'border-radius': '50%'}">
+<p>
+    Followers: {{social?.followers}}
+</p>
+
+<p>
+    Following: {{social?.following}}
+</p>

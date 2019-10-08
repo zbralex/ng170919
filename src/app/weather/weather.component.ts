@@ -7,6 +7,5 @@ import { Iweather } from '../mock';
   styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent {
-@Input() public weather: Iweather;
-
+  @Input() public weather: Iweather;
 }

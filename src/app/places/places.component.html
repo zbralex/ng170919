@@ -1,13 +1,9 @@
 <ng-container>
-  <img
-    class="card-img-top"
-    [src]="selectedPlace?.img"
-  >
-  <div >
-    <a *ngFor="let place of places"    (click)="onPlaceClick($event, place)"  href="#"  >
-      {{ place?.address }}
-      <br>
-      {{ place?.phone}}
+  <img class="card-img-top" [src]="selectedPlace?.img">
+  <div>
+    <a *ngFor="let place of places"    (click)="onPlaceClick($event, place)"  href="#"  class="places-inner">
+      <span>{{ place?.address }} </span>      
+      <span>{{ place?.phone}}</span>
     </a>
   </div>
 </ng-container>

@@ -1,0 +1,9 @@
+.weather-title {
+    color: #fff;
+}
+.weather {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
